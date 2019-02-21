@@ -56,7 +56,10 @@ public class HashTableTest {
         Assertions.assertThrows(NullPointerException.class, () -> hashTable.remove(null));
     }
 
-    
 
+    @Test
+    public void testIfLookUpThrowsNullPointerExceptionWhenNull() {
+        Assertions.assertThrows(NullPointerException.class, () -> hashTable.remove(null));
+    }
 
 }
