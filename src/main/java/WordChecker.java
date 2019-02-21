@@ -1,3 +1,5 @@
+import exceptions.StringEmptyException;
+
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
@@ -12,7 +14,7 @@ public class WordChecker
 	}
 	
 
-	public boolean wordExists(String word) throws StringEmptyException{
+	public boolean wordExists(String word) throws StringEmptyException {
 		checkIfValueNull(word);
 		checkIfStringIsEmpty(word);
 		return wordList.lookup(word);

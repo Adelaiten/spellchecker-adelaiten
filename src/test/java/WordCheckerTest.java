@@ -1,3 +1,4 @@
+import exceptions.StringEmptyException;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.jupiter.api.Assertions;
@@ -23,7 +24,7 @@ public class WordCheckerTest {
 
 
     @Test
-    public void testIfWordExistsReturnTrue() throws StringEmptyException{
+    public void testIfWordExistsReturnTrue() throws StringEmptyException {
         Mockito.when(wordList.lookup("mock")).thenReturn(true);
         boolean isWord = wordChecker.wordExists("mock");
         Assertions.assertTrue(isWord);

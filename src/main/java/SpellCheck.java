@@ -1,4 +1,5 @@
 
+import exceptions.StringEmptyException;
 import hashers.BetterStringHasher;
 import hashers.DegenerateStringHasher;
 import hashers.LousyStringHasher;
@@ -8,7 +9,7 @@ import java.io.IOException;
 import java.io.OutputStream;
 import java.io.PrintStream;
 public class SpellCheck {
-    public static void main(String[] arrstring) throws StringEmptyException{
+    public static void main(String[] arrstring) throws StringEmptyException {
         if (arrstring.length == 0) {
             SpellCheck.showUsageMessage();
             return;

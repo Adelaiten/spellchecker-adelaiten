@@ -1,4 +1,5 @@
 
+import exceptions.StringEmptyException;
 import hashers.StringHasher;
 
 import java.io.BufferedReader;
