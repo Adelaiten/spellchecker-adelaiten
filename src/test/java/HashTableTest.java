@@ -17,13 +17,6 @@ public class HashTableTest {
 
     }
 
-
-    @Test
-    public void testIfAddMethodThrowsArithmeticException() {
-        HashTable hashTable = new HashTable(0, betterStringHasher);
-
-    }
-
     @Test
     public void testAddMethod() {
         hashTable.add("test");

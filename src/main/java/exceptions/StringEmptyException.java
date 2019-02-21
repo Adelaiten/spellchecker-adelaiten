@@ -1,7 +1,7 @@
 package exceptions;
 
 public class StringEmptyException extends Exception {
-    StringEmptyException(String message) {
+    public StringEmptyException(String message) {
         super(message);
     }
 }

@@ -29,7 +29,6 @@ public class HashTable
 	public HashTable(int tableSize, StringHasher hasher)
 	{
         tableSize = resizeTableIfZero(tableSize);
-
         this.wordsArray = new LinkedList[tableSize];
 		this.hasher = hasher;
 	}
@@ -98,7 +97,7 @@ public class HashTable
     private int getIndex(String s) {
 	    return Math.floorMod(hasher.hash(s), wordsArray.length);
     }
-    
+
     private int resizeTableIfZero(int tableSize) {
         if(tableSize == 0) {
             tableSize = 1;
