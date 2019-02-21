@@ -28,15 +28,16 @@ public class HashTable
 
 	public HashTable(int tableSize, StringHasher hasher)
 	{
-	    if(tableSize == 0) {
-	        throw new ArithmeticException("table");
-        }
-		this.wordsArray = new LinkedList[tableSize];
+        tableSize = resizeTableIfZero(tableSize);
+
+        this.wordsArray = new LinkedList[tableSize];
 		this.hasher = hasher;
 	}
 
 
-	/**
+
+
+    /**
    * Takes a string and adds it to the hash table, if it's not already
    * in the hash table.  If it is, this method has no effect.
    *
@@ -96,5 +97,12 @@ public class HashTable
 
     private int getIndex(String s) {
 	    return Math.floorMod(hasher.hash(s), wordsArray.length);
+    }
+    
+    private int resizeTableIfZero(int tableSize) {
+        if(tableSize == 0) {
+            tableSize = 1;
+        }
+        return tableSize;
     }
 }

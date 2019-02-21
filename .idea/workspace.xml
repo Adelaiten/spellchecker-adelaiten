@@ -2,8 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5979d5dd-952b-4768-b525-8084be7fb266" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml___jb_tmp___" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/HashTable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/HashTable.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/HashTableTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/HashTableTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/exceptions/ArrayLengthZeroException.java" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -23,7 +25,7 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="java" value="33" />
+          <entry key="java" value="35" />
           <entry key="md" value="1" />
           <entry key="txt" value="4" />
           <entry key="xml" value="1" />
@@ -31,23 +33,23 @@
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="JAVA" value="33" />
+          <entry key="JAVA" value="35" />
           <entry key="PLAIN_TEXT" value="5" />
           <entry key="XML" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="dummy" value="42" />
-          <entry key="java" value="7825" />
+          <entry key="dummy" value="59" />
+          <entry key="java" value="8035" />
           <entry key="txt" value="9" />
           <entry key="xml" value="2" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="7825" />
-          <entry key="PLAIN_TEXT" value="51" />
+          <entry key="JAVA" value="8035" />
+          <entry key="PLAIN_TEXT" value="68" />
           <entry key="XML" value="2" />
         </counts>
       </usages-collector>
@@ -59,7 +61,7 @@
         <entry file="file://$PROJECT_DIR$/src/main/java/WordChecker.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="1065">
-              <caret line="73" column="11" lean-forward="true" selection-start-line="73" selection-start-column="11" selection-end-line="73" selection-end-column="11" />
+              <caret line="75" column="11" lean-forward="true" selection-start-line="75" selection-start-column="11" selection-end-line="75" selection-end-column="11" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#4350#4351#0" expanded="true" />
@@ -72,9 +74,10 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/HashTable.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="31" column="43" selection-start-line="31" selection-start-column="43" selection-end-line="31" selection-end-column="43" />
+            <state relative-caret-position="274">
+              <caret line="100" column="4" selection-start-line="100" selection-start-column="4" selection-end-line="100" selection-end-column="4" />
               <folding>
+                <element signature="imports" expanded="true" />
                 <element signature="e#2347#2348#0" expanded="true" />
                 <element signature="e#2415#2416#0" expanded="true" />
               </folding>
@@ -83,9 +86,18 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/exceptions/StringEmptyException.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="30">
+              <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/java/HashTableTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
+            <state relative-caret-position="255">
               <caret line="23" selection-start-line="23" selection-end-line="23" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -128,6 +140,7 @@
         <option value="$PROJECT_DIR$/src/test/java/WordCheckerTest.java" />
         <option value="$PROJECT_DIR$/src/test/java/HashTable.java" />
         <option value="$PROJECT_DIR$/src/test/java/HashTableTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/exceptions/ArrayLengthZeroException.java" />
         <option value="$PROJECT_DIR$/src/main/java/HashTable.java" />
       </list>
     </option>
@@ -140,7 +153,7 @@
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="1413" />
+    <option name="x" value="47" />
     <option name="y" value="-4" />
     <option name="width" value="1319" />
     <option name="height" value="772" />
@@ -183,6 +196,14 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="exceptions" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="spellcheckeradelaiten" type="b2602c69:ProjectViewProjectNode" />
+              <item name="spellchecker-adelaiten" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="hashers" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -213,7 +234,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1550774296373" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1550774545319" />
     <property name="extract.method.default.visibility" value="private" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../../I SI-Week/Stack/pom.xml" />
     <property name="project.structure.last.edited" value="Modules" />
@@ -347,7 +368,7 @@
     </history-entry>
   </component>
   <component name="ToolWindowManager">
-    <frame x="1413" y="-4" width="1319" height="772" extended-state="6" />
+    <frame x="47" y="-4" width="1319" height="772" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Image Layers" order="0" />
@@ -358,7 +379,7 @@
       <window_info id="Capture Tool" order="5" />
       <window_info id="Job Explorer" order="6" />
       <window_info id="Designer" order="7" />
-      <window_info content_ui="combo" id="Project" order="8" visible="true" weight="0.24943139" />
+      <window_info active="true" content_ui="combo" id="Project" order="8" visible="true" weight="0.24943139" />
       <window_info id="Structure" order="9" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Terminal" order="0" />
       <window_info anchor="bottom" id="Event Log" order="1" side_tool="true" />
@@ -368,7 +389,7 @@
       <window_info anchor="bottom" id="DB Execution Console" order="5" />
       <window_info anchor="bottom" id="Message" order="6" />
       <window_info anchor="bottom" id="Find" order="7" weight="0.32866043" />
-      <window_info active="true" anchor="bottom" id="Run" order="8" visible="true" weight="0.32866043" />
+      <window_info anchor="bottom" id="Run" order="8" visible="true" weight="0.32866043" />
       <window_info anchor="bottom" id="Debug" order="9" weight="0.39719626" />
       <window_info anchor="bottom" id="Cvs" order="10" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="11" weight="0.4" />
@@ -445,17 +466,6 @@
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/StringEmptyException.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="23" selection-start-line="2" selection-start-column="23" selection-end-line="2" selection-end-column="23" />
-          <folding>
-            <element signature="e#95#96#0" expanded="true" />
-            <element signature="e#115#116#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/SpellCheck.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="45">
@@ -508,20 +518,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/HashTableTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="23" selection-start-line="23" selection-end-line="23" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/WordChecker.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1065">
-          <caret line="73" column="11" lean-forward="true" selection-start-line="73" selection-start-column="11" selection-end-line="73" selection-end-column="11" />
+          <caret line="75" column="11" lean-forward="true" selection-start-line="75" selection-start-column="11" selection-end-line="75" selection-end-column="11" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#4350#4351#0" expanded="true" />
@@ -530,11 +530,40 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/exceptions/ArrayLengthZeroException.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
+          <folding>
+            <element signature="e#113#114#0" expanded="true" />
+            <element signature="e#135#136#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/exceptions/StringEmptyException.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/HashTableTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="23" selection-start-line="23" selection-end-line="23" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/HashTable.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="31" column="43" selection-start-line="31" selection-start-column="43" selection-end-line="31" selection-end-column="43" />
+        <state relative-caret-position="274">
+          <caret line="100" column="4" selection-start-line="100" selection-start-column="4" selection-end-line="100" selection-end-column="4" />
           <folding>
+            <element signature="imports" expanded="true" />
             <element signature="e#2347#2348#0" expanded="true" />
             <element signature="e#2415#2416#0" expanded="true" />
           </folding>
