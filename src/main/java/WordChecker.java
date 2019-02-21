@@ -137,6 +137,19 @@ public class WordChecker
 
 
 
+	private void splitWords(List<String> suggestions, String word) {
+		char[] wordArray = word.toCharArray();
+		int loopLength = wordArray.length;
+		for(int i = 1; i <= loopLength; i++) {
+			String firstSplittedWord = word.substring(0, i);
+			String secondSplittedWord = word.substring(i, loopLength);
+			if(wordList.lookup(firstSplittedWord) && wordList.lookup(secondSplittedWord)) {
+				suggestions.add(firstSplittedWord);
+				suggestions.add(secondSplittedWord);
+			}
+		}
+	}
+
 	private String buildStringFromList(List<Character> list) {
 	    StringBuilder sb = new StringBuilder();
 	    for(char s : list) {
