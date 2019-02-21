@@ -1,3 +1,5 @@
+package hashers;
+
 /**
  *
  * ICS 23 Summer 2004

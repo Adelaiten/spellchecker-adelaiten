@@ -1,8 +1,9 @@
 
+import hashers.StringHasher;
+
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
-import java.io.Reader;
 
 public class WordList {
     private final HashTable hashTable;

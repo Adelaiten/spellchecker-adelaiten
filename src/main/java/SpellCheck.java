@@ -1,4 +1,9 @@
 
+import hashers.BetterStringHasher;
+import hashers.DegenerateStringHasher;
+import hashers.LousyStringHasher;
+import hashers.StringHasher;
+
 import java.io.IOException;
 import java.io.OutputStream;
 import java.io.PrintStream;

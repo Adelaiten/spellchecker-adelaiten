@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  *
@@ -53,6 +54,27 @@ public class WordChecker
    */
 	public ArrayList getSuggestions(String word) {
 		ArrayList<String> suggestions = new ArrayList<>();
+		swapCharacters(suggestions, word);
 		return suggestions;
 	}
+
+
+	private void swapCharacters(List<String> suggestions, String word) {
+		char[] wordArray = word.toCharArray();
+		int wordLength = wordArray.length;
+		for(int i = 0; i < wordLength -1; i++) {
+			char tempChar = wordArray[i];
+			wordArray[i] = wordArray[i+1];
+			wordArray[i+1] = tempChar;
+			String swapWord = String.valueOf(wordArray);
+			if(wordList.lookup(swapWord) && !suggestions.contains(swapWord)) {
+				suggestions.add(swapWord);
+			}
+			wordArray[i+1] = wordArray[i];
+			wordArray[i] = tempChar;
+		}
+	}
+
+
+
 }

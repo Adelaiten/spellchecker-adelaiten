@@ -1,3 +1,5 @@
+import hashers.StringHasher;
+
 import java.util.LinkedList;
 
 /**
@@ -15,19 +17,18 @@ public class HashTable
 {
 	/**
    * The constructor is given a table size (i.e. how big to make the array)
-   * and a StringHasher, which is used to hash the strings.
+   * and a hashers.StringHasher, which is used to hash the strings.
    *
    * @param tableSize number of elements in the hash array
    *        hasher    Object that creates the hash code for a string
    * @see StringHasher
    */
-	LinkedList<String>[] wordsArray;
-	StringHasher hasher;
+	private LinkedList<String>[] wordsArray;
+	private StringHasher hasher;
 
 	public HashTable(int tableSize, StringHasher hasher)
 	{
 		this.wordsArray = new LinkedList[tableSize];
-		initList(tableSize);
 		this.hasher = hasher;
 	}
 
@@ -40,10 +41,14 @@ public class HashTable
    */
 	public void add(String s) {
         int index = getIndex(s);
-        wordsArray[index].add(s);
+        if(wordsArray[index] == null) {
+            wordsArray[index] = new LinkedList<>();
+            wordsArray[index].add(s);
+        }else {
+            wordsArray[index].add(s);
+        }
+
 	}
-
-
 
 
     /**
@@ -54,9 +59,11 @@ public class HashTable
   */
 	public boolean lookup(String s) {
         LinkedList<String> list = getWordList(s);
+        if(list == null) {
+            return false;
+        }
         return list.contains(s);
 	}
-
 
 
     /**
@@ -71,18 +78,16 @@ public class HashTable
 	}
 
 
-    private void initList(int tableSize) {
-        for(int i =0; i < tableSize; i++) {
-            wordsArray[i] = new LinkedList<>();
-        }
-    }
 
     private LinkedList<String> getWordList(String s) {
         int index = getIndex(s);
         return wordsArray[index];
     }
 
+
     private int getIndex(String s) {
-        return hasher.hash(s) % wordsArray.length;
+
+
+	    return Math.floorMod(hasher.hash(s), wordsArray.length);
     }
 }
