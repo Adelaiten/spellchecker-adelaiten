@@ -55,6 +55,10 @@ public class WordChecker
 	public ArrayList getSuggestions(String word) {
 		ArrayList<String> suggestions = new ArrayList<>();
 		swapCharacters(suggestions, word);
+		insertLetter(suggestions, word);
+		deleteCharacter(suggestions, word);
+		replaceLetter(suggestions, word);
+		splitWords(suggestions, word);
 		return suggestions;
 	}
 
@@ -75,6 +79,44 @@ public class WordChecker
 		}
 	}
 
+	private void insertLetter(List<String> suggestions, String word) {
+		char[] wordArray = word.toCharArray();
+		List<Character> characterList = createCharacterList(wordArray);
+		int loopLength = wordArray.length;
 
+
+		for(int i= 0; i <= loopLength; i++) {
+			for(char letter = 'a'; letter < 'z'; letter++) {
+				characterList.add(i, letter);
+				String newWord = buildStringFromList(characterList);
+				if(wordList.lookup(newWord) && !suggestions.contains(newWord)) {
+					suggestions.add(newWord);
+				}
+				characterList.remove(i);
+			}
+
+		}
+	}
+
+
+
+
+
+	private String buildStringFromList(List<Character> list) {
+	    StringBuilder sb = new StringBuilder();
+	    for(char s : list) {
+	        sb.append(s);
+        }
+        return sb.toString();
+    }
+
+
+	private List<Character> createCharacterList(char[] wordArray) {
+        List<Character> characterList = new ArrayList<>();
+		for(char c : wordArray) {
+			characterList.add(c);
+		}
+		return characterList;
+	}
 
 }
