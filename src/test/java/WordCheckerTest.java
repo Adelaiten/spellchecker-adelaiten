@@ -60,7 +60,18 @@ public class WordCheckerTest {
 
     }
 
+    @Test
+    public void testIfGetSuggestionsSwapReturnsGoodWords() throws StringEmptyException{
+        WordList wordList = Mockito.mock(WordList.class);
+        Mockito.when(wordList.lookup("cake")).thenReturn(true);
+        Mockito.when(wordList.lookup("acek")).thenReturn(true);
+        WordChecker wordChecker= new WordChecker(wordList);
+        List<String> expected = new ArrayList<>();
+        expected.add("cake");
+        expected.add("acek");
+        Assertions.assertIterableEquals(expected, wordChecker.getSuggestions("acke"));
 
+    }
 
 
 
