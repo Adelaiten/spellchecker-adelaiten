@@ -23,5 +23,11 @@ public class WordCheckerTest {
         Assertions.assertFalse(isWord);
     }
 
- 
+    @Test
+    public void testIfNullStringThrowsNullPointerException() {
+        WordList wordList = Mockito.mock(WordList.class);
+        WordChecker wordChecker = new WordChecker(wordList);
+        Assertions.assertThrows(NullPointerException.class, () -> wordChecker.wordExists(null));
+    }
+
 }
