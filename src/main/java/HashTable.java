@@ -52,12 +52,10 @@ public class HashTable
   *
   * @param s String to look up
   */
-	public boolean lookup(String s)
-	{
+	public boolean lookup(String s) {
         LinkedList<String> list = getWordList(s);
         return list.contains(s);
 	}
-
 
 
 
@@ -67,12 +65,11 @@ public class HashTable
    *
    * @param s String to remove
   */
-	public void remove(String s)
-	{
-        int index = getIndex(s);
-        LinkedList<String> list = wordsArray[index];
-
+	public void remove(String s) {
+        LinkedList<String> list = getWordList(s);
+        list.remove(s);
 	}
+
 
     private void initList(int tableSize) {
         for(int i =0; i < tableSize; i++) {
