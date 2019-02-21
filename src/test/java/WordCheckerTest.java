@@ -92,6 +92,21 @@ public class WordCheckerTest {
     }
 
 
-
-
+    @Test
+    public void testIfGetSuggestionsReplacingReturnsGoodWords() {
+        WordList wordList = Mockito.mock(WordList.class);
+        Mockito.when(wordList.lookup("cake")).thenReturn(true);
+        WordChecker wordChecker = new WordChecker(wordList);
+        List<String> expected = new ArrayList<>();
+        expected.add("cake");
+        Assertions.assertAll(
+                () -> Assertions.assertIterableEquals(expected, wordChecker.getSuggestions("rake")),
+                () -> Assertions.assertIterableEquals(expected, wordChecker.getSuggestions("dake")),
+                () -> Assertions.assertIterableEquals(expected, wordChecker.getSuggestions("fake")),
+                () -> Assertions.assertIterableEquals(expected, wordChecker.getSuggestions("lake")),
+                () -> Assertions.assertIterableEquals(expected, wordChecker.getSuggestions("cike")),
+                () -> Assertions.assertIterableEquals(expected, wordChecker.getSuggestions("caoe")),
+                () -> Assertions.assertIterableEquals(expected, wordChecker.getSuggestions("caki"))
+        );
+    }
 }
