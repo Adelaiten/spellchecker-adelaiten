@@ -61,17 +61,36 @@ public class WordCheckerTest {
     }
 
     @Test
-    public void testIfGetSuggestionsSwapReturnsGoodWords() throws StringEmptyException{
+    public void testIfGetSuggestionsSwapReturnsGoodWords() throws StringEmptyException {
         WordList wordList = Mockito.mock(WordList.class);
         Mockito.when(wordList.lookup("cake")).thenReturn(true);
         Mockito.when(wordList.lookup("acek")).thenReturn(true);
         WordChecker wordChecker= new WordChecker(wordList);
         List<String> expected = new ArrayList<>();
-        expected.add("cake");
         expected.add("acek");
+        expected.add("cake");
+
         Assertions.assertIterableEquals(expected, wordChecker.getSuggestions("acke"));
 
     }
+
+
+    @Test
+    public void testIfGetSuggestionsDeletingReturnsGoodWords() {
+        WordList wordList = Mockito.mock(WordList.class);
+        Mockito.when(wordList.lookup("cake")).thenReturn(true);
+        WordChecker wordChecker = new WordChecker(wordList);
+        List<String> expected = new ArrayList<>();
+        expected.add("cake");
+        Assertions.assertAll(
+                () -> Assertions.assertIterableEquals(expected, wordChecker.getSuggestions("acake")),
+                () -> Assertions.assertIterableEquals(expected, wordChecker.getSuggestions("caake")),
+                () -> Assertions.assertIterableEquals(expected, wordChecker.getSuggestions("ccake")),
+                () -> Assertions.assertIterableEquals(expected, wordChecker.getSuggestions("cakke")),
+                () -> Assertions.assertIterableEquals(expected, wordChecker.getSuggestions("cakee"))
+                );
+    }
+
 
 
 

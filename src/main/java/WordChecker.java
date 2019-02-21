@@ -30,6 +30,7 @@ public class WordChecker
 		replaceLetter(suggestions, word);
 		splitWords(suggestions, word);
 
+		sortListAlphabetically(suggestions);
 		return suggestions;
 	}
 
@@ -100,17 +101,6 @@ public class WordChecker
 	}
 
 
-	private void changeLetters(List<Character> characterList, int i, char letter) {
-		characterList.remove(i);
-		characterList.add(i, letter);
-	}
-
-
-	private void addWordIfCorrect(List<String> suggestions, String newWord) {
-		if (wordList.lookup(newWord) && !suggestions.contains(newWord)) {
-			suggestions.add(newWord);
-		}
-	}
 
 
 	private void splitWords(List<String> suggestions, String word) {
@@ -172,4 +162,17 @@ public class WordChecker
 			}
 		});
 	}
+
+	private void changeLetters(List<Character> characterList, int i, char letter) {
+		characterList.remove(i);
+		characterList.add(i, letter);
+	}
+
+
+	private void addWordIfCorrect(List<String> suggestions, String newWord) {
+		if (wordList.lookup(newWord) && !suggestions.contains(newWord)) {
+			suggestions.add(newWord);
+		}
+	}
+
 }
