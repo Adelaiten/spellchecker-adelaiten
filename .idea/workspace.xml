@@ -209,7 +209,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1550773861264" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1550774086544" />
     <property name="extract.method.default.visibility" value="private" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../../I SI-Week/Stack/pom.xml" />
     <property name="project.structure.last.edited" value="Modules" />
@@ -233,11 +233,21 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.HashTableTest.testIfAddThrowsNullPointerExceptionWhenWordIsNull">
+  <component name="RunManager" selected="JUnit.HashTableTest">
     <configuration name="HashTableTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="spellchecker-adelaiten" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="HashTableTest" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="HashTableTest.testAddMethod" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="spellchecker-adelaiten" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="HashTableTest" />
+      <option name="METHOD_NAME" value="testAddMethod" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -260,16 +270,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="WordCheckerTest.testIfGetSuggestionsReplacingReturnsGoodWords" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="spellchecker-adelaiten" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="WordCheckerTest" />
-      <option name="METHOD_NAME" value="testIfGetSuggestionsReplacingReturnsGoodWords" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="WordCheckerTest.testIfGetSuggestionsSplittingWordsReturnsGoodWords" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="spellchecker-adelaiten" />
       <option name="PACKAGE_NAME" value="" />
@@ -281,19 +281,19 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="JUnit.WordCheckerTest.testIfGetSuggestionsReplacingReturnsGoodWords" />
       <item itemvalue="JUnit.WordCheckerTest.testIfGetSuggestionsSplittingWordsReturnsGoodWords" />
       <item itemvalue="JUnit.WordCheckerTest" />
       <item itemvalue="JUnit.HashTableTest" />
       <item itemvalue="JUnit.HashTableTest.testIfAddThrowsNullPointerExceptionWhenWordIsNull" />
+      <item itemvalue="JUnit.HashTableTest.testAddMethod" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.HashTableTest.testIfAddThrowsNullPointerExceptionWhenWordIsNull" />
         <item itemvalue="JUnit.HashTableTest" />
+        <item itemvalue="JUnit.HashTableTest.testAddMethod" />
+        <item itemvalue="JUnit.HashTableTest.testIfAddThrowsNullPointerExceptionWhenWordIsNull" />
         <item itemvalue="JUnit.WordCheckerTest" />
         <item itemvalue="JUnit.WordCheckerTest.testIfGetSuggestionsSplittingWordsReturnsGoodWords" />
-        <item itemvalue="JUnit.WordCheckerTest.testIfGetSuggestionsReplacingReturnsGoodWords" />
       </list>
     </recent_temporary>
   </component>

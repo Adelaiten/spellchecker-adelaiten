@@ -9,10 +9,12 @@ public class HashTableTest {
 
     private BetterStringHasher betterStringHasher;
     private HashTable hashTable;
+
     @Before
     public void init() {
         betterStringHasher = Mockito.mock(BetterStringHasher.class);
         hashTable = new HashTable(100, betterStringHasher);
+
     }
 
 
@@ -31,17 +33,12 @@ public class HashTableTest {
 
     @Test
     public void testIfAddThrowsNullPointerExceptionWhenWordIsNull() {
-        BetterStringHasher betterStringHasher = new BetterStringHasher();
-        HashTable hashTable = new HashTable(100, betterStringHasher);
-
         Assertions.assertThrows(NullPointerException.class, () -> hashTable.add(null));
     }
 
 
     @Test
     public void testRemoveMethod() {
-        BetterStringHasher betterStringHasher = new BetterStringHasher();
-        HashTable hashTable = new HashTable(100, betterStringHasher);
         hashTable.add("test");
         hashTable.add("smash");
         hashTable.add("blank");
@@ -54,6 +51,12 @@ public class HashTableTest {
         );
     }
 
+    @Test
+    public void testIfRemoveMethodThrowsNullWhenStringIsNull() {
+        Assertions.assertThrows(NullPointerException.class, () -> hashTable.remove(null));
+    }
+
+    
 
 
 }
