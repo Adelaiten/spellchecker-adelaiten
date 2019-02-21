@@ -71,9 +71,7 @@ public class WordChecker
 			wordArray[i] = wordArray[i+1];
 			wordArray[i+1] = tempChar;
 			String swapWord = String.valueOf(wordArray);
-			if(wordList.lookup(swapWord) && !suggestions.contains(swapWord)) {
-				suggestions.add(swapWord);
-			}
+			addWordIfCorrect(suggestions, swapWord);
 			wordArray[i+1] = wordArray[i];
 			wordArray[i] = tempChar;
 		}
@@ -89,9 +87,7 @@ public class WordChecker
 			for(char letter = 'a'; letter < 'z'; letter++) {
 				characterList.add(i, letter);
 				String newWord = buildStringFromList(characterList);
-				if(wordList.lookup(newWord) && !suggestions.contains(newWord)) {
-					suggestions.add(newWord);
-				}
+				addWordIfCorrect(suggestions, newWord);
 				characterList.remove(i);
 			}
 
@@ -107,9 +103,7 @@ public class WordChecker
 			char tempLetter = characterList.get(i);
 			characterList.remove(i);
 			String newWord = buildStringFromList(characterList);
-			if(wordList.lookup(newWord) && !suggestions.contains(newWord)) {
-				suggestions.add(newWord);
-			}
+			addWordIfCorrect(suggestions, newWord);
 
 			characterList.add(i, tempLetter);
 		}
@@ -126,15 +120,18 @@ public class WordChecker
 				characterList.remove(i);
 				characterList.add(i, letter);
 				String newWord = buildStringFromList(characterList);
-				if(wordList.lookup(newWord) && !suggestions.contains(newWord)) {
-					suggestions.add(newWord);
-				}
+				addWordIfCorrect(suggestions, newWord);
 				characterList.remove(i);
 				characterList.add(i, tempLetter);
 			}
 		}
 	}
 
+	private void addWordIfCorrect(List<String> suggestions, String newWord) {
+		if (wordList.lookup(newWord) && !suggestions.contains(newWord)) {
+			suggestions.add(newWord);
+		}
+	}
 
 
 	private void splitWords(List<String> suggestions, String word) {
@@ -143,12 +140,11 @@ public class WordChecker
 		for(int i = 1; i <= loopLength; i++) {
 			String firstSplittedWord = word.substring(0, i);
 			String secondSplittedWord = word.substring(i, loopLength);
-
-			addSplittedWhenWordsExist(suggestions, firstSplittedWord, secondSplittedWord);
+			addSplittedWhenWordsCorrect(suggestions, firstSplittedWord, secondSplittedWord);
 		}
 	}
 
-	private void addSplittedWhenWordsExist(List<String> suggestions, String firstSplittedWord, String secondSplittedWord) {
+	private void addSplittedWhenWordsCorrect(List<String> suggestions, String firstSplittedWord, String secondSplittedWord) {
 		if(wordList.lookup(firstSplittedWord) && wordList.lookup(secondSplittedWord)) {
 			suggestions.add(firstSplittedWord);
 			suggestions.add(secondSplittedWord);
