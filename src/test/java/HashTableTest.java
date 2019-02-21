@@ -19,6 +19,22 @@ public class HashTableTest {
         );
     }
 
-    
+    @Test
+    public void testRemoveMethod() {
+        BetterStringHasher betterStringHasher = new BetterStringHasher();
+        HashTable hashTable = new HashTable(100, betterStringHasher);
+        hashTable.add("test");
+        hashTable.add("smash");
+        hashTable.add("blank");
+        hashTable.remove("smash");
+        hashTable.remove("blank");
+        Assertions.assertAll(
+                () -> Assertions.assertTrue(hashTable.lookup("test")),
+                () -> Assertions.assertFalse(hashTable.lookup("smash")),
+                () -> Assertions.assertFalse(hashTable.lookup("blank"))
+        );
+    }
+
+
 
 }
