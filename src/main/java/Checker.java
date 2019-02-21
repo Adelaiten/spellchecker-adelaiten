@@ -10,7 +10,7 @@ import java.util.Collections;
 import java.util.Iterator;
 
 public class Checker {
-    public void check(String string, String string2, StringHasher stringHasher, PrintStream printStream) throws IOException {
+    public void check(String string, String string2, StringHasher stringHasher, PrintStream printStream) throws IOException, StringEmptyException {
         WordList wordList = new WordList(string2, stringHasher);
         BufferedReader bufferedReader = new BufferedReader(new FileReader(string));
         String string3 = bufferedReader.readLine();
