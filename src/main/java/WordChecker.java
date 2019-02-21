@@ -117,14 +117,18 @@ public class WordChecker
 		for(int i = 0; i < loopLength; i++) {
 			for(char letter = 'a'; letter < 'z'; letter++) {
 				char tempLetter = characterList.get(i);
-				characterList.remove(i);
-				characterList.add(i, letter);
+				changeLetters(characterList, i, letter);
 				String newWord = buildStringFromList(characterList);
 				addWordIfCorrect(suggestions, newWord);
-				characterList.remove(i);
-				characterList.add(i, tempLetter);
+
+				changeLetters(characterList, i, tempLetter);
 			}
 		}
+	}
+
+	private void changeLetters(List<Character> characterList, int i, char letter) {
+		characterList.remove(i);
+		characterList.add(i, letter);
 	}
 
 	private void addWordIfCorrect(List<String> suggestions, String newWord) {
