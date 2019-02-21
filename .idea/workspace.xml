@@ -87,8 +87,8 @@
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="1413" />
-    <option name="y" value="764" />
+    <option name="x" value="47" />
+    <option name="y" value="-4" />
     <option name="width" value="1319" />
     <option name="height" value="772" />
   </component>
@@ -132,6 +132,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
+    <property name="extract.method.default.visibility" value="private" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../../I SI-Week/hashmap-adelaiten/pom.xml" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />

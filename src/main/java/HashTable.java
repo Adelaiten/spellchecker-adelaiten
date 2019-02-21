@@ -39,12 +39,16 @@ public class HashTable
    * @param s String to add
    */
 	public void add(String s) {
-        int index = hasher.hash(s) % wordsArray.length;
+        int index = getIndex(s);
         wordsArray[index].add(s);
 	}
-	
 
-	/**
+    private int getIndex(String s) {
+        return hasher.hash(s) % wordsArray.length;
+    }
+
+
+    /**
   * Takes a string and returns true if that string appears in the
 	* hash table, false otherwise.
   *
@@ -52,14 +56,12 @@ public class HashTable
   */
 	public boolean lookup(String s)
 	{
-
+        int index = getIndex(s);
+        LinkedList<String> list = wordsArray[index];
+        return list.contains(s);
 	}
 
-	private void initList(int tableSize) {
-	    for(int i =0; i < tableSize; i++) {
-	        wordsArray[i] = new LinkedList<>();
-        }
-    }
+
 	
 
 	/**
@@ -72,4 +74,10 @@ public class HashTable
 	{
 
 	}
+
+    private void initList(int tableSize) {
+        for(int i =0; i < tableSize; i++) {
+            wordsArray[i] = new LinkedList<>();
+        }
+    }
 }
