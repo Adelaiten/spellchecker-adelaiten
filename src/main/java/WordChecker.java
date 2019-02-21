@@ -143,10 +143,15 @@ public class WordChecker
 		for(int i = 1; i <= loopLength; i++) {
 			String firstSplittedWord = word.substring(0, i);
 			String secondSplittedWord = word.substring(i, loopLength);
-			if(wordList.lookup(firstSplittedWord) && wordList.lookup(secondSplittedWord)) {
-				suggestions.add(firstSplittedWord);
-				suggestions.add(secondSplittedWord);
-			}
+
+			addSplittedWhenWordsExist(suggestions, firstSplittedWord, secondSplittedWord);
+		}
+	}
+
+	private void addSplittedWhenWordsExist(List<String> suggestions, String firstSplittedWord, String secondSplittedWord) {
+		if(wordList.lookup(firstSplittedWord) && wordList.lookup(secondSplittedWord)) {
+			suggestions.add(firstSplittedWord);
+			suggestions.add(secondSplittedWord);
 		}
 	}
 
