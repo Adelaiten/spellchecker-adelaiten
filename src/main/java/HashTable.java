@@ -43,9 +43,7 @@ public class HashTable
         wordsArray[index].add(s);
 	}
 
-    private int getIndex(String s) {
-        return hasher.hash(s) % wordsArray.length;
-    }
+
 
 
     /**
@@ -56,15 +54,14 @@ public class HashTable
   */
 	public boolean lookup(String s)
 	{
-        int index = getIndex(s);
-        LinkedList<String> list = wordsArray[index];
+        LinkedList<String> list = getWordList(s);
         return list.contains(s);
 	}
 
 
-	
 
-	/**
+
+    /**
    * Takes a string and removes it from the hash table, if it
    * appears in the hash table.  If it doesn't, this method has no effect.
    *
@@ -72,6 +69,8 @@ public class HashTable
   */
 	public void remove(String s)
 	{
+        int index = getIndex(s);
+        LinkedList<String> list = wordsArray[index];
 
 	}
 
@@ -79,5 +78,14 @@ public class HashTable
         for(int i =0; i < tableSize; i++) {
             wordsArray[i] = new LinkedList<>();
         }
+    }
+
+    private LinkedList<String> getWordList(String s) {
+        int index = getIndex(s);
+        return wordsArray[index];
+    }
+
+    private int getIndex(String s) {
+        return hasher.hash(s) % wordsArray.length;
     }
 }
