@@ -14,7 +14,6 @@ public class HashTableTest {
     public void init() {
         betterStringHasher = Mockito.mock(BetterStringHasher.class);
         hashTable = new HashTable(100, betterStringHasher);
-
     }
 
     @Test
