@@ -40,6 +40,10 @@ public class WordChecker
    * @return bollean indicating if the word was found or not.
    */
 	public boolean wordExists(String word) {
+		if(word == null) {
+			throw new NullPointerException();
+		}
+
 		return wordList.lookup(word);
 	}
 
