@@ -40,6 +40,7 @@ public class HashTable
    * @param s String to add
    */
 	public void add(String s) {
+	    throwNullPointerException(s);
         int index = getIndex(s);
         if(wordsArray[index] == null) {
             wordsArray[index] = new LinkedList<>();
@@ -58,10 +59,9 @@ public class HashTable
   * @param s String to look up
   */
 	public boolean lookup(String s) {
+	    throwNullPointerException(s);
+
         LinkedList<String> list = getWordList(s);
-        if(list == null) {
-            return false;
-        }
         return list.contains(s);
 	}
 
@@ -73,10 +73,16 @@ public class HashTable
    * @param s String to remove
   */
 	public void remove(String s) {
+        throwNullPointerException(s);
         LinkedList<String> list = getWordList(s);
         list.remove(s);
 	}
 
+    private void throwNullPointerException(String s) {
+        if(s == null) {
+            throw new NullPointerException();
+}
+    }
 
 
     private LinkedList<String> getWordList(String s) {

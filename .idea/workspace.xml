@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5979d5dd-952b-4768-b525-8084be7fb266" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/HashTable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/HashTable.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/HashTableTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/HashTableTest.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -39,14 +39,14 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="dummy" value="42" />
-          <entry key="java" value="6851" />
+          <entry key="java" value="7278" />
           <entry key="txt" value="9" />
           <entry key="xml" value="2" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="6851" />
+          <entry key="JAVA" value="7278" />
           <entry key="PLAIN_TEXT" value="51" />
           <entry key="XML" value="2" />
         </counts>
@@ -72,8 +72,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/HashTable.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-225">
-              <caret line="11" column="75" selection-start-line="11" selection-start-column="75" selection-end-line="11" selection-end-column="75" />
+            <state relative-caret-position="439">
+              <caret line="37" column="54" lean-forward="true" selection-start-line="37" selection-start-column="54" selection-end-line="37" selection-end-column="54" />
             </state>
           </provider>
         </entry>
@@ -81,8 +81,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/test/java/HashTableTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="18" column="10" selection-start-line="18" selection-start-column="10" selection-end-line="18" selection-end-column="10" />
+            <state relative-caret-position="199">
+              <caret line="28" column="87" selection-start-line="28" selection-start-column="87" selection-end-line="28" selection-end-column="87" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -114,7 +114,6 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/src/main/java/hashers/LousyStringHasher.java" />
-        <option value="$PROJECT_DIR$/src/main/java/HashTable.java" />
         <option value="$PROJECT_DIR$/src/main/resources/wordlist.txt" />
         <option value="$PROJECT_DIR$/src/main/java/Main.java" />
         <option value="$PROJECT_DIR$/pom.xml" />
@@ -124,6 +123,7 @@
         <option value="$PROJECT_DIR$/src/main/java/WordChecker.java" />
         <option value="$PROJECT_DIR$/src/test/java/WordCheckerTest.java" />
         <option value="$PROJECT_DIR$/src/test/java/HashTable.java" />
+        <option value="$PROJECT_DIR$/src/main/java/HashTable.java" />
         <option value="$PROJECT_DIR$/src/test/java/HashTableTest.java" />
       </list>
     </option>
@@ -209,7 +209,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1550773662090" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1550773861264" />
     <property name="extract.method.default.visibility" value="private" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../../I SI-Week/Stack/pom.xml" />
     <property name="project.structure.last.edited" value="Modules" />
@@ -233,11 +233,21 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.HashTableTest">
+  <component name="RunManager" selected="JUnit.HashTableTest.testIfAddThrowsNullPointerExceptionWhenWordIsNull">
     <configuration name="HashTableTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="spellchecker-adelaiten" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="HashTableTest" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="HashTableTest.testIfAddThrowsNullPointerExceptionWhenWordIsNull" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="spellchecker-adelaiten" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="HashTableTest" />
+      <option name="METHOD_NAME" value="testIfAddThrowsNullPointerExceptionWhenWordIsNull" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -270,30 +280,20 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="WordCheckerTest.testifGetSuggestionsDeletingReturnsGoodWords" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="spellchecker-adelaiten" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="WordCheckerTest" />
-      <option name="METHOD_NAME" value="testifGetSuggestionsDeletingReturnsGoodWords" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <list>
-      <item itemvalue="JUnit.WordCheckerTest.testifGetSuggestionsDeletingReturnsGoodWords" />
       <item itemvalue="JUnit.WordCheckerTest.testIfGetSuggestionsReplacingReturnsGoodWords" />
       <item itemvalue="JUnit.WordCheckerTest.testIfGetSuggestionsSplittingWordsReturnsGoodWords" />
       <item itemvalue="JUnit.WordCheckerTest" />
       <item itemvalue="JUnit.HashTableTest" />
+      <item itemvalue="JUnit.HashTableTest.testIfAddThrowsNullPointerExceptionWhenWordIsNull" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.HashTableTest.testIfAddThrowsNullPointerExceptionWhenWordIsNull" />
         <item itemvalue="JUnit.HashTableTest" />
         <item itemvalue="JUnit.WordCheckerTest" />
         <item itemvalue="JUnit.WordCheckerTest.testIfGetSuggestionsSplittingWordsReturnsGoodWords" />
         <item itemvalue="JUnit.WordCheckerTest.testIfGetSuggestionsReplacingReturnsGoodWords" />
-        <item itemvalue="JUnit.WordCheckerTest.testifGetSuggestionsDeletingReturnsGoodWords" />
       </list>
     </recent_temporary>
   </component>
@@ -311,12 +311,6 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="WordCheckerTest_testIfGetSuggestionsSwapReturnsGoodWords - 2019.02.21 at 17h 21m 29s.xml">
-      <configuration name="WordCheckerTest.testIfGetSuggestionsSwapReturnsGoodWords" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="WordCheckerTest_testIfGetSuggestionsSwapReturnsGoodWords - 2019.02.21 at 17h 22m 29s.xml">
-      <configuration name="WordCheckerTest.testIfGetSuggestionsSwapReturnsGoodWords" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="WordCheckerTest_testifGetSuggestionsDeletingReturnsGoodWords - 2019.02.21 at 17h 59m 21s.xml">
       <configuration name="WordCheckerTest.testifGetSuggestionsDeletingReturnsGoodWords" configurationId="JUnit" />
     </history-entry>
@@ -341,6 +335,12 @@
     <history-entry file="WordCheckerTest - 2019.02.21 at 18h 19m 28s.xml">
       <configuration name="WordCheckerTest" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="HashTableTest - 2019.02.21 at 19h 25m 31s.xml">
+      <configuration name="HashTableTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="HashTableTest - 2019.02.21 at 19h 27m 44s.xml">
+      <configuration name="HashTableTest" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="ToolWindowManager">
     <frame x="47" y="-4" width="1319" height="772" extended-state="6" />
@@ -354,7 +354,7 @@
       <window_info id="Capture Tool" order="5" />
       <window_info id="Job Explorer" order="6" />
       <window_info id="Designer" order="7" />
-      <window_info active="true" content_ui="combo" id="Project" order="8" visible="true" weight="0.24943139" />
+      <window_info content_ui="combo" id="Project" order="8" visible="true" weight="0.24943139" />
       <window_info id="Structure" order="9" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Terminal" order="0" />
       <window_info anchor="bottom" id="Event Log" order="1" side_tool="true" />
@@ -364,7 +364,7 @@
       <window_info anchor="bottom" id="DB Execution Console" order="5" />
       <window_info anchor="bottom" id="Message" order="6" />
       <window_info anchor="bottom" id="Find" order="7" weight="0.32866043" />
-      <window_info anchor="bottom" id="Run" order="8" visible="true" weight="0.32866043" />
+      <window_info active="true" anchor="bottom" id="Run" order="8" visible="true" weight="0.32866043" />
       <window_info anchor="bottom" id="Debug" order="9" weight="0.39719626" />
       <window_info anchor="bottom" id="Cvs" order="10" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="11" weight="0.4" />
@@ -518,15 +518,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/HashTable.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-225">
-          <caret line="11" column="75" selection-start-line="11" selection-start-column="75" selection-end-line="11" selection-end-column="75" />
+        <state relative-caret-position="439">
+          <caret line="37" column="54" lean-forward="true" selection-start-line="37" selection-start-column="54" selection-end-line="37" selection-end-column="54" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/HashTableTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="18" column="10" selection-start-line="18" selection-start-column="10" selection-end-line="18" selection-end-column="10" />
+        <state relative-caret-position="199">
+          <caret line="28" column="87" selection-start-line="28" selection-start-column="87" selection-end-line="28" selection-end-column="87" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
