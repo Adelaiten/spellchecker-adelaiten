@@ -98,7 +98,23 @@ public class WordChecker
 		}
 	}
 
+	private void deleteCharacter(List<String> suggestions, String word) {
+		char[] wordArray = word.toCharArray();
+		List<Character> characterList = createCharacterList(wordArray);
+		int loopLength = wordArray.length;
 
+		for(int i = 0; i < loopLength; i++) {
+			char tempLetter = characterList.get(i);
+			characterList.remove(i);
+			String newWord = buildStringFromList(characterList);
+			if(wordList.lookup(newWord) && !suggestions.contains(newWord)) {
+				suggestions.add(newWord);
+			}
+
+			characterList.add(i, tempLetter);
+		}
+	}
+	
 
 
 
