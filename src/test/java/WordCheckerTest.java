@@ -14,5 +14,14 @@ public class WordCheckerTest {
         Assertions.assertTrue(isWord);
     }
 
+    @Test
+    public void testIfWordExistsReturnFalse() {
+        WordList wordList = Mockito.mock(WordList.class);
+        Mockito.when(wordList.lookup("mock")).thenReturn(false);
+        WordChecker wordChecker = new WordChecker(wordList);
+        boolean isWord = wordChecker.wordExists("mock");
+        Assertions.assertFalse(isWord);
+    }
 
+ 
 }
