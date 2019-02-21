@@ -114,7 +114,26 @@ public class WordChecker
 			characterList.add(i, tempLetter);
 		}
 	}
-	
+
+
+	private void replaceLetter(List<String> suggestions, String word) {
+		char[] wordArray = word.toCharArray();
+		List<Character> characterList = createCharacterList(wordArray);
+		int loopLength = wordArray.length;
+		for(int i = 0; i < loopLength; i++) {
+			for(char letter = 'a'; letter < 'z'; letter++) {
+				char tempLetter = characterList.get(i);
+				characterList.remove(i);
+				characterList.add(i, letter);
+				String newWord = buildStringFromList(characterList);
+				if(wordList.lookup(newWord) && !suggestions.contains(newWord)) {
+					suggestions.add(newWord);
+				}
+				characterList.remove(i);
+				characterList.add(i, tempLetter);
+			}
+		}
+	}
 
 
 
