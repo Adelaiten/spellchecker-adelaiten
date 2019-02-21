@@ -39,12 +39,16 @@ public class WordChecker
    * @param word Word to chack against the internal word list
    * @return bollean indicating if the word was found or not.
    */
-	public boolean wordExists(String word) {
+	public boolean wordExists(String word) throws StringEmptyException{
+		checkIfValueNull(word);
+		checkIfStringIsEmpty(word);
+		return wordList.lookup(word);
+	}
+
+	private void checkIfValueNull(String word) {
 		if(word == null) {
 			throw new NullPointerException();
 		}
-
-		return wordList.lookup(word);
 	}
 
 
@@ -56,7 +60,10 @@ public class WordChecker
    * @param word String to check against
    * @return A list of plausible matches
    */
-	public ArrayList getSuggestions(String word) {
+	public ArrayList getSuggestions(String word) throws StringEmptyException{
+		checkIfValueNull(word);
+		checkIfStringIsEmpty(word);
+
 		ArrayList<String> suggestions = new ArrayList<>();
 		swapCharacters(suggestions, word);
 		insertLetter(suggestions, word);
@@ -64,6 +71,12 @@ public class WordChecker
 		replaceLetter(suggestions, word);
 		splitWords(suggestions, word);
 		return suggestions;
+	}
+
+	private void checkIfStringIsEmpty(String word) throws StringEmptyException {
+		if(word.equals("")) {
+			throw new StringEmptyException("String is Empty!");
+		}
 	}
 
 
