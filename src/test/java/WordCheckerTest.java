@@ -1,4 +1,3 @@
-import org.junit.Assert;
 import org.junit.Test;
 import org.junit.jupiter.api.Assertions;
 import org.mockito.Mockito;
@@ -43,6 +42,26 @@ public class WordCheckerTest {
         WordChecker wordChecker = new WordChecker(wordList);
         Assertions.assertThrows(StringEmptyException.class, () -> wordChecker.wordExists(""));
     }
+
+    @Test
+    public void testIfGetSuggestionsInsertingReturnsGoodWords() throws StringEmptyException{
+        WordList wordList = Mockito.mock(WordList.class);
+        Mockito.when(wordList.lookup("bake")).thenReturn(true);
+        Mockito.when(wordList.lookup("fake")).thenReturn(true);
+        Mockito.when(wordList.lookup("cake")).thenReturn(true);
+        Mockito.when(wordList.lookup("vade")).thenReturn(true);
+        WordChecker wordChecker= new WordChecker(wordList);
+        List<String> expected = new ArrayList<>();
+        expected.add("bake");
+        expected.add("cake");
+        expected.add("fake");
+        expected.add("vade");
+        Assertions.assertIterableEquals(expected, wordChecker.getSuggestions("vake"));
+
+    }
+
+
+
 
 
 }
