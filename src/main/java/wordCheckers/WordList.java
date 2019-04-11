@@ -1,4 +1,6 @@
+package wordCheckers;
 
+import dataStructures.HashTable;
 import hashers.StringHasher;
 
 import java.io.BufferedReader;
