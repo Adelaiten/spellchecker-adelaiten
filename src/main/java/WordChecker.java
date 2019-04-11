@@ -1,4 +1,6 @@
 import exceptions.StringEmptyException;
+import helpers.CheckerHelper;
+import wordCheckers.*;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -22,123 +24,24 @@ public class WordChecker
 
 
 	public ArrayList getSuggestions(String word) throws StringEmptyException{
+		CheckerHelper helper = new CheckerHelper();
+		CharacterSwapper swapper = new CharacterSwapper(helper);
+		CharacterDeleter deleter = new CharacterDeleter(helper);
+		CharacterInserter inserter = new CharacterInserter(helper);
+		CharacterReplacer replacer = new CharacterReplacer(helper);
+		WordSplitter splitter = new WordSplitter();
 		checkIfValueNull(word);
 		checkIfStringIsEmpty(word);
 
 		ArrayList<String> suggestions = new ArrayList<>();
-		swapCharacters(suggestions, word);
-		insertLetter(suggestions, word);
-		deleteCharacter(suggestions, word);
-		replaceLetter(suggestions, word);
-		splitWords(suggestions, word);
+		suggestions.addAll(swapper.swapCharacters(wordList, word));
+		suggestions.addAll(deleter.deleteCharacter(wordList, word));
+		suggestions.addAll(inserter.insertCharacter(wordList, word));
+		suggestions.addAll(replacer.replaceCharacter(wordList, word));
+		suggestions.addAll(splitter.splitWords(wordList, word));
 
 		sortListAlphabetically(suggestions);
 		return suggestions;
-	}
-
-
-	private void swapCharacters(List<String> suggestions, String word) {
-		char[] wordArray = word.toCharArray();
-		int wordLength = wordArray.length;
-		for(int i = 0; i < wordLength -1; i++) {
-			char tempChar = wordArray[i];
-			wordArray[i] = wordArray[i+1];
-			wordArray[i+1] = tempChar;
-			String swapWord = String.valueOf(wordArray);
-			addWordIfCorrect(suggestions, swapWord);
-			wordArray[i+1] = wordArray[i];
-			wordArray[i] = tempChar;
-		}
-	}
-
-
-	private void insertLetter(List<String> suggestions, String word) {
-		char[] wordArray = word.toCharArray();
-		List<Character> characterList = createCharacterList(wordArray);
-		int loopLength = wordArray.length;
-
-
-		for(int i= 0; i <= loopLength; i++) {
-			for(char letter = 'a'; letter < 'z'; letter++) {
-				characterList.add(i, letter);
-				String newWord = buildStringFromList(characterList);
-				addWordIfCorrect(suggestions, newWord);
-				characterList.remove(i);
-			}
-
-		}
-	}
-
-
-	private void deleteCharacter(List<String> suggestions, String word) {
-		char[] wordArray = word.toCharArray();
-		List<Character> characterList = createCharacterList(wordArray);
-		int loopLength = wordArray.length;
-
-		for(int i = 0; i < loopLength; i++) {
-			char tempLetter = characterList.get(i);
-			characterList.remove(i);
-			String newWord = buildStringFromList(characterList);
-			addWordIfCorrect(suggestions, newWord);
-
-			characterList.add(i, tempLetter);
-		}
-	}
-
-
-	private void replaceLetter(List<String> suggestions, String word) {
-		char[] wordArray = word.toCharArray();
-		List<Character> characterList = createCharacterList(wordArray);
-		int loopLength = wordArray.length;
-		for(int i = 0; i < loopLength; i++) {
-			for(char letter = 'a'; letter < 'z'; letter++) {
-				char tempLetter = characterList.get(i);
-				changeLetters(characterList, i, letter);
-				String newWord = buildStringFromList(characterList);
-				addWordIfCorrect(suggestions, newWord);
-
-				changeLetters(characterList, i, tempLetter);
-			}
-		}
-	}
-
-
-
-
-	private void splitWords(List<String> suggestions, String word) {
-		char[] wordArray = word.toCharArray();
-		int loopLength = wordArray.length;
-		for(int i = 1; i <= loopLength; i++) {
-			String firstSplittedWord = word.substring(0, i);
-			String secondSplittedWord = word.substring(i, loopLength);
-			addSplittedWhenWordsCorrect(suggestions, firstSplittedWord, secondSplittedWord);
-		}
-	}
-
-
-	private void addSplittedWhenWordsCorrect(List<String> suggestions, String firstSplittedWord, String secondSplittedWord) {
-		if(wordList.lookup(firstSplittedWord) && wordList.lookup(secondSplittedWord)) {
-			suggestions.add(firstSplittedWord);
-			suggestions.add(secondSplittedWord);
-		}
-	}
-
-
-	private String buildStringFromList(List<Character> list) {
-	    StringBuilder sb = new StringBuilder();
-	    for(char s : list) {
-	        sb.append(s);
-        }
-        return sb.toString();
-    }
-
-
-	private List<Character> createCharacterList(char[] wordArray) {
-        List<Character> characterList = new ArrayList<>();
-		for(char c : wordArray) {
-			characterList.add(c);
-		}
-		return characterList;
 	}
 
 
@@ -148,13 +51,11 @@ public class WordChecker
 		}
 	}
 
-
 	private void checkIfValueNull(String word) {
 		if(word == null) {
 			throw new NullPointerException();
 		}
 	}
-
 
 	private void sortListAlphabetically(List<String> words) {
 		Collections.sort(words, new Comparator<String>() {
@@ -164,17 +65,4 @@ public class WordChecker
 			}
 		});
 	}
-
-	private void changeLetters(List<Character> characterList, int i, char letter) {
-		characterList.remove(i);
-		characterList.add(i, letter);
-	}
-
-
-	private void addWordIfCorrect(List<String> suggestions, String newWord) {
-		if (wordList.lookup(newWord) && !suggestions.contains(newWord)) {
-			suggestions.add(newWord);
-		}
-	}
-
 }
